@@ -3,6 +3,12 @@ import subprocess
 
 """
 请使用对应conda环境中的interpreter执行
+
+手动安装：
+pip install pandas numpy jieba tqdm jupyter
+
+pytorch cpu版：
+pip3 install torch torchvision torchaudio 
 """
 def check_nvidia_smi():
     try:
@@ -16,7 +22,7 @@ def check_nvidia_smi():
         return False
 
 if __name__ == '__main__':
-    packages_to_install = ['pandas', 'numpy', 'jieba', 'tqdm']
+    packages_to_install = ['pandas', 'numpy', 'jieba', 'tqdm','jupyter']
     for package in packages_to_install:
         print(f"[INFO]: Installing... {package} now!")
         subprocess.run(['pip3', 'install', package, '-i', 'https://pypi.tuna.tsinghua.edu.cn/simple'])
