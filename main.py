@@ -10,6 +10,7 @@ def check_nvidia_smi():
         result = subprocess.run(['nvidia-smi'], capture_output=True, text=True)
         # 输出nvidia-smi命令的输出
         print(result.stdout)
+        return True
     except FileNotFoundError:
         print("[ERROR]: nvidia-smi命令未找到，请确保已安装NVIDIA驱动和nvidia-smi命令。")
         return False
