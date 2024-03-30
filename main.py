@@ -44,14 +44,14 @@ if __name__ == '__main__':
         subprocess.run(['pip3', 'install', 'torch torchvision torchaudio'])
     else:
         if check_nvidia_smi():
-            print(f"[INFO]: 查看所显示的cuda版本，选择对应cuda版本进行安装：<cuda==11.x,请输入11.> <cuda==12.x, 请输入12>: ")
+            print(f"[INFO]: 查看所显示的cuda版本，选择对应cuda版本进行安装：<cuda==11.x,请输入11> <cuda==12.x, 请输入12>: ")
             in_ = input()
             assert in_ in ['11','12'], f"请正确输入选项, ==> {in_}"
 
             if in_ == '11':
-                subprocess.run(['pip3', 'install', 'torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118'])
+                subprocess.run(['pip3', 'install', 'torch','torchvision','torchaudio','--index-url','https://download.pytorch.org/whl/cu118'])
             else:
-                subprocess.run(['pip3', 'install', 'torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121'])
+                subprocess.run(['pip3', 'install', 'torch','torchvision','torchaudio','--index-url','https://download.pytorch.org/whl/cu121'])
 
 
     try:
